@@ -1,0 +1,14 @@
+//%equal-heights {
+//  display: flex;
+//  flex-wrap: wrap;
+//}
+//
+//.message {
+//  @extend %message-shared;
+//}
+
+%center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
