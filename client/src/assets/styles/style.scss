@@ -1,0 +1,280 @@
+@import "mixins";
+@import "custom";
+@import "animations";
+
+* {
+  text-decoration: none !important;
+}
+.no-blue {
+  user-select: none;
+}
+.no-shadow {
+  box-shadow: none !important;
+}
+.pointer {
+  cursor: pointer;
+  user-select: none;
+}
+#root {
+  position: relative;
+}
+body {
+  overflow-x: hidden;
+}
+:active, :hover, :focus {
+  //outline: 0 !important;
+  //outline-offset: 0 !important;
+  //box-shadow-color: none !important;
+}
+
+// Button
+.button {
+  @media screen and (max-width: 540px){
+    font-size: 12px !important;
+  }
+}
+
+// Spinner
+.spinner {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+// Navbar
+.navbar {
+  &__avatar-wrapper {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Aside
+.aside {
+  //position: sticky;
+  //top: 40px;
+  &__inner {
+    position: sticky;
+    top: 40px;
+  }
+  &__item {
+    transition: .1s all ease-in-out;
+    display: flex;
+    flex-wrap: nowrap;
+    &:hover {
+      background: rgba(62, 50, 88, 0.16);
+    }
+    @media screen and (max-width: 1000px){
+      &:hover {
+        background: transparent;
+      }
+    }
+    @media screen and (max-width: 890px){
+      padding-left: 0 !important;
+    }
+  }
+  @media screen and (max-width: 575px){
+    background: #3E3258;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    &__inner {
+      padding: 6px 10px !important;
+      position: static;
+    }
+    &__group {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__item {
+      padding: 5px !important;
+      margin: 0 !important;
+      span {
+        color: #F7F7F7 !important;
+      }
+    }
+    &__icon {
+      font-size: 27px;
+    }
+  }
+}
+.aside-support {
+  &__accordion {
+    border-radius: .25rem !important;
+    * {
+      border-radius: .25rem !important;
+    }
+  }
+  //@media screen and (max-width: 890px){
+  //  display: none !important;
+  //}
+}
+
+// Post
+.post {
+  overflow: hidden;
+  &__author {
+    img {
+      max-width: 60px;
+      width: 100%;
+      max-height: 60px;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  &__img {
+    img {
+      min-height: 100px;
+      max-height: 300px;
+    }
+  }
+}
+.author-post {
+  &__name {
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  &__date {
+    opacity: .6;
+    font-size: .8rem;
+  }
+}
+.post-create {
+  @media screen and (max-width: 575px){
+    border: none;
+  }
+  &__textarea {
+    display: block;
+    resize: none;
+    height: 200px;
+  }
+}
+
+
+// Auth
+.auth {
+  &__row {
+    width: 100vw !important;
+    @media screen and (max-width: 767px){
+      &_reg {
+        flex-direction: column;
+
+      }
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__col-image {
+    &_reg {
+      @media screen and (max-width: 767px){
+        z-index: -1;
+        opacity: .6;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-30%);
+        img {
+          width: 400px;
+        }
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+  }
+}
+.valid-messages-wrapper {
+  z-index: 100;
+  width: 50vw;
+  font-size: 14px !important;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  @media screen and (max-width: 1200px){
+    width: 80vw;
+  }
+  @media screen and (max-width: 1200px){
+    width: 90vw;
+  }
+}
+
+
+// User
+.user-line {
+  &__avatar-wrapper {
+    width: 75px;
+    height: 75px;
+    //overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    &_un {
+      //width: 100%;
+      //height: 100%;
+      //object-fit: cover;
+      //object-position: 0 0;
+      //width: 75px;
+      //height: 75px;
+    }
+    img {
+      //width: auto;
+      //height: 120%;
+    }
+  }
+  &__name {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  @media screen and (max-width: 665px){
+    &__avatar-wrapper {
+      width: 50px;
+      height: 50px;
+      &_un {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    &__name {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    &__sub {
+      font-size: .9rem;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    &__avatar-wrapper {
+      width: 60px;
+      height: 60px;
+      &_un {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    &__name {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+}
+
